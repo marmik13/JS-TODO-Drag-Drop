@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>To-Do Application</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close-modal">&times;</span>
+			<p id="modal-text"></p>
+		</div>
+	</div>
+	<div class="titlebox">
+		<h1 id="title" contenteditable="true">Your Board</h1>
+	</div>
+	<div class="clear-position">
+		<button class="clear" onclick="clearBoard()">x</button>
+		<span class="tooltip">Clear Board</span>
+	</div>
+	<div id="inputFields" class="inputWrapper">
+		<textarea rows="1" cols="60" id="inputTask" class="taskinput"></textarea>
+		<button id="addTask" class="createTask">Create</button>
+	</div>
+	<div class="cardWrapper">
+		<div class="todo col-4">
+			<h1 style="display: inline-block;">TO DO</h1>
+			<div id="createOne" class="createbutton">
+				<span class="createtask">+</span>
+			</div>
+			<div class="taskbox" id="displayallTasks" ondragover="onDragOverBox(event);"
+				ondragleave="onDragLeaveBox(event);" ondrop="onDrop(event, this);">
+
+			</div>
+		</div>
+		<div class="doing col-4">
+			<h1>Doing</h1>
+			<div class="taskbox" id="displayallDoingTasks" ondragover="onDragOverBox(event);"
+				ondragleave="onDragLeaveBox(event);" ondrop="onDrop(event, this);">
+
+			</div>
+		</div>
+		<div class="done col-4">
+			<h1>Done</h1>
+			<div class="taskbox" id="displayallDoneTasks" ondragover="onDragOverBox(event);"
+				ondragleave="onDragLeaveBox(event);" ondrop="onDrop(event, this);">
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<marquee width="100%" direction="left" scrollamount="12" onmouseover="this.stop();" onmouseout="this.start();"
+			class="footertext">Design and Developed by
+			<b class="profile">Marmik Patel</b>
+		</marquee>
+	</div>
+
+	<script src="index.js"></script>
+</body>
+
+</html>
